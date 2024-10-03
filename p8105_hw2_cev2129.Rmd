@@ -10,6 +10,10 @@ library(tidyverse)
 getwd()
 
 nyc_transit = read_csv(file ="/Users/tinavarela/Desktop/github_document/p8105_hw2_cev2129/NYC_Transit_Subway_Entrance_And_Exit_Data.csv")
+
+janitor::clean_names(nyc_transit)
+
+
 ```
 
 
