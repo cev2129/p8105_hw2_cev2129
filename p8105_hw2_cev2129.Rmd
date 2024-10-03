@@ -57,4 +57,33 @@ trash = mutate(trash, trashwheel = "Mr")
 trash_joined = bind_rows(trash, trash2, trash3)
 ```
 
-The new dataset consisting of the 3 data sets combined contains 914 amount of observations. Key Variables include "dumpster", "weight_tons", "volume_cubic_yards", and "trashwheel". 
+The new dataset consisting of the 3 data sets combined contains 914 amount of observations. Key Variables include "dumpster", "weight_tons", "volume_cubic_yards", and "trashwheel". I cleaned each data set, eliminating missing variables or variables unrealted to dumnpsters, and then I added a new column called "trashwheel" so that I can identify which row is from which set 
+
+##Problem 3
+
+```{r}
+bakers = read_csv("/Users/tinavarela/Desktop/github_document/p8105_hw2_cev2129/gbb_datasets/bakers.csv")|> 
+  janitor::clean_names()
+
+bakes = read_csv("/Users/tinavarela/Desktop/github_document/p8105_hw2_cev2129/gbb_datasets/bakes.csv") |>
+  janitor::clean_names()
+
+results = read_csv("/Users/tinavarela/Desktop/github_document/p8105_hw2_cev2129/gbb_datasets/results.csv", na = c("NA", ".", "")) |>
+  janitor::clean_names() |> 
+  slice(-1, -2)|>
+  drop_na() 
+
+
+
+
+
+```
+
+```{r}
+viewers = read_csv("/Users/tinavarela/Desktop/github_document/p8105_hw2_cev2129/gbb_datasets/viewers.csv") |>
+  janitor::clean_names()
+head(viewers, 10)
+
+
+
+```
